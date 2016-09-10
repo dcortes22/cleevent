@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     if @user.blank?
       @user = User.new(user_params)
       if @user.save
+        ActionCable.server.broadcast 'users_channel', message: @user
         render json: @user, status: :created, location: @user
       else
         render json: @user.errors, status: :unprocessable_entity
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
       user_params[:drink_ids].each do |id|
         @user.drinks << Drink.find(id)
       end
+      ActionCable.server.broadcast 'users_channel', message: @user
       render json: @user
     end
   end
