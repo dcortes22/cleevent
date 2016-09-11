@@ -13,6 +13,10 @@ var bootstrapSass = {
   in: './node_modules/bootstrap-sass/'
 };
 
+var angular = {
+  in: './node_modules/angular/angular.min.js'
+};
+
 // Bootstrap fonts source
 // var fonts = {
 //   in: [source + 'fonts/*.*', bootstrapSass.in + 'assets/fonts/**/*'],
@@ -32,7 +36,7 @@ var scss = {
   }
 };
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass', 'scripts'], function() {
   browserSync.init({
     server: {}
   });
@@ -47,6 +51,16 @@ gulp.task('sass', function() {
     .pipe(concat('main.css'))
     .pipe(gulp.dest(scss.out))
     .pipe(browserSync.stream());
+});
+
+gulp.task('scripts', function () {
+  return gulp.src([angular.in, 'js/**/*.js'])
+    .pipe(concat('main.js'))
+    .pipe(uglify({
+      // inSourceMap:
+      // outSourceMap: "app.js.map"
+    }))
+    .pipe(gulp.dest('dist/js'))
 });
 
 gulp.task('default', ['serve']);

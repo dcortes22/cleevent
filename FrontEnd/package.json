@@ -14,6 +14,7 @@
   "author": "Daniel Cortes <dcortes1892@gmail.com> (http://dcortes92.github.io/)",
   "license": "MIT",
   "devDependencies": {
+    "angular": "1.5.8",
     "bootstrap-sass": "3.3.7",
     "browser-sync": "2.15.0",
     "commitizen": "2.8.6",

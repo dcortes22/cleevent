@@ -8,18 +8,24 @@
   <link rel="stylesheet" href="/dist/css/main.css">
 </head>
 <body>
-  <div id="main">
+  <div id="main" data-ng-app="cleeventApp">
     <div class="jumbotron">
       <div class="container">
-        <h2>Hello Bootstrap</h2>
+        <h2>Hello Angular</h2>
       </div>
     </div>
-    <div class="mobile-test">
-
+    <div class="container">
+      <div class="form-group">
+        <label for="name">Enter your name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" data-ng-model="test">
+      </div>
+      <p>
+        Hello {{test}}
+      </p>
     </div>
   </div>
 
-  <script src="/build/main.js"></script>
+  <script src="/dist/js/main.js"></script>
 
 </body>
 </html>
