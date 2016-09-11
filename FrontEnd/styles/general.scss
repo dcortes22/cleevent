@@ -12,6 +12,7 @@ body {
 
 input.form-control {
   border-color: #000;
+  border-radius: 0;
 
   &:focus {
     border-color: lighten(#000, 15%);
