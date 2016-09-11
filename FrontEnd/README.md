@@ -2,4 +2,4 @@
 
 * Install node and npm
 * `npm install`
-* `grunt`
+* `gulp`
