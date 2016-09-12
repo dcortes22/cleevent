@@ -29,7 +29,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://cleapi.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = ['https://cleapi.herokuapp.com', 'http://cleapi.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://cleapi.herokuapp.com', 'http://cleapi.herokuapp.com', 'http://localhost:9000']
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
