@@ -47,7 +47,7 @@ gulp.task('serve', ['sass', 'fonts', 'scripts'], function() {
   });
 
   gulp.watch("styles/*.scss", ['sass']);
-  gulp.watch("js/*.js", ['scripts']);
+  gulp.watch("js/**/*.js", ['scripts']);
   gulp.watch("index.html").on('change', browserSync.reload);
 });
 
@@ -83,8 +83,6 @@ function getScrips() {
 
   scriptsArr = scriptsArr.concat(angularDeps);
   scriptsArr = scriptsArr.concat(['js/**/*.js'])
-
-  console.log(scriptsArr)
 
   return scriptsArr;
 }
