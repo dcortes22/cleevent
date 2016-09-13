@@ -3,9 +3,9 @@
 one:
   name: MyString
   last_name: MyString
-  email: MyString
+  email: 
 
 two:
   name: MyString
   last_name: MyString
-  email: MyString
+  email: 

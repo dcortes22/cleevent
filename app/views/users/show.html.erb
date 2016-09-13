@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista Ordenes</h1>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    Ordenes Recibidas
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Orden</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody id="drinks">
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %> <%= user.last_name %></td>
+        <td>
+          <ul>
+            <% user.drinks.each do |drink| %>
+              <li>
+                <%= drink.name %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+        <td><button type="button" class="btn btn-success">Entregar</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909180820) do
+ActiveRecord::Schema.define(version: 20160912234739) do
 
   create_table "drinks", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "drinks_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id",  null: false
     t.integer "drink_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "last_name"
-    t.string "email"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

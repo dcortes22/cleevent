@@ -1,41 +1,64 @@
 class DrinksController < ApplicationController
-  before_action :set_drink, only: [:show, :update, :destroy]
+  before_action :set_drink, only: [:show, :edit, :update, :destroy]
 
   # GET /drinks
+  # GET /drinks.json
   def index
     @drinks = Drink.all
-
-    render json: @drinks
   end
 
   # GET /drinks/1
+  # GET /drinks/1.json
   def show
-    render json: @drink
+  end
+
+  # GET /drinks/new
+  def new
+    @drink = Drink.new
+  end
+
+  # GET /drinks/1/edit
+  def edit
   end
 
   # POST /drinks
+  # POST /drinks.json
   def create
     @drink = Drink.new(drink_params)
 
-    if @drink.save
-      render json: @drink, status: :created, location: @drink
-    else
-      render json: @drink.errors, status: :unprocessable_entity
+    respond_to do |format|
+      if @drink.save
+        format.html { redirect_to @drink, notice: 'Drink was successfully created.' }
+        format.json { render :show, status: :created, location: @drink }
+      else
+        format.html { render :new }
+        format.json { render json: @drink.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # PATCH/PUT /drinks/1
+  # PATCH/PUT /drinks/1.json
   def update
-    if @drink.update(drink_params)
-      render json: @drink
-    else
-      render json: @drink.errors, status: :unprocessable_entity
+    respond_to do |format|
+      if @drink.update(drink_params)
+        format.html { redirect_to @drink, notice: 'Drink was successfully updated.' }
+        format.json { render :show, status: :ok, location: @drink }
+      else
+        format.html { render :edit }
+        format.json { render json: @drink.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # DELETE /drinks/1
+  # DELETE /drinks/1.json
   def destroy
     @drink.destroy
+    respond_to do |format|
+      format.html { redirect_to drinks_url, notice: 'Drink was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -44,7 +67,7 @@ class DrinksController < ApplicationController
       @drink = Drink.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def drink_params
       params.require(:drink).permit(:name)
     end

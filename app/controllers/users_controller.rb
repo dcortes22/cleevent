@@ -1,50 +1,65 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   # GET /users
+  # GET /users.json
   def index
     @users = User.all
-
-    render json: @users
   end
 
   # GET /users/1
+  # GET /users/1.json
   def show
-    render json: @user
+    @users = User.includes(:drinks).where.not(:drinks => {:id => nil})
+  end
+
+  # GET /users/new
+  def new
+    @user = User.new
+  end
+
+  # GET /users/1/edit
+  def edit
   end
 
   # POST /users
+  # POST /users.json
   def create
-    @user = User.where(email: user_params[:email]).first
-    if @user.blank?
-      @user = User.new(user_params)
+    @user = User.new(user_params)
+
+    respond_to do |format|
       if @user.save
-        ActionCable.server.broadcast 'users_channel', message: @user
-        render json: @user, status: :created, location: @user
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
       else
-        render json: @user.errors, status: :unprocessable_entity
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    else
-      user_params[:drink_ids].each do |id|
-        @user.drinks << Drink.find(id)
-      end
-      ActionCable.server.broadcast 'users_channel', message: @user
-      render json: @user
     end
   end
 
   # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
   def update
-    if @user.update(user_params)
-      render json: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # DELETE /users/1
+  # DELETE /users/1.json
   def destroy
     @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -53,7 +68,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :last_name, :email, drink_ids:[])
     end
