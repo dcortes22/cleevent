@@ -1,0 +1,16 @@
+I"P(function() {
+  App.order = App.cable.subscriptions.create("OrderChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {
+      return console.log(data);
+    },
+    deliver: function(user) {
+      return this.perform('deliver', {
+        user: user
+      });
+    }
+  });
+
+}).call(this);
+:ET

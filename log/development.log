@@ -1,0 +1,893 @@
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160912234605)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160912234605)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "last_name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160912234605"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrinks (20160912234625)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160912234625"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTableUserDrink (20160912234739)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "drinks_users" ("user_id" integer NOT NULL, "drink_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160912234739"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-12 23:49:32 UTC], ["updated_at", 2016-09-12 23:49:32 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-09-12 17:53:14 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.5ms)
+Completed 200 OK in 27ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 17:54:53 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 17:56:38 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 17:57:23 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 18:02:13 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 18:04:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 26ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 18:28:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-09-12 18:28:23 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 1061ms (Views: 1046.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 18:28:24 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:28:24 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users/new" for ::1 at 2016-09-12 18:28:29 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (27.4ms)
+  Rendered users/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 68ms (Views: 58.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2016-09-12 18:28:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xUUVRb1ZK1acvofvZB/ageKwjsm9dqg8qtn1wWDd+U5W4A2isFB+Q5sD+f9p2zgPCcum3RGfBIx+znsQQbgjPw==", "user"=>{"name"=>"David", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "David"], ["last_name", "Cortes"], ["email", "dcortes22@gmail.com"], ["created_at", 2016-09-13 00:28:47 UTC], ["updated_at", 2016-09-13 00:28:47 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 046e9f1c-bdc6-442c-b066-ca013922aaf8) to Async(default) with arguments: #<GlobalID:0x007f863b30cfa0 @uri=#<URI::GID gid://order-app/User/1>>
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 43ms (ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [046e9f1c-bdc6-442c-b066-ca013922aaf8] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f863ab17818 @uri=#<URI::GID gid://order-app/User/1>>
+[ActiveJob] [OrderBroadcastJob] [046e9f1c-bdc6-442c-b066-ca013922aaf8] [ActionCable] Broadcasting to order_channel: {:user=>#<User id: 1, name: "David", last_name: "Cortes", email: "dcortes22@gmail.com", created_at: "2016-09-13 00:28:47", updated_at: "2016-09-13 00:28:47">}
+Started GET "/users/1" for ::1 at 2016-09-12 18:28:47 -0600
+[ActiveJob] [OrderBroadcastJob] [046e9f1c-bdc6-442c-b066-ca013922aaf8] Performed OrderBroadcastJob from Async(default) in 1.92ms
+Processing by UsersController#show as HTML
+OrderChannel transmitting {"user"=>{"id"=>1, "name"=>"David", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com", "created_at"=>"2016-09-13T00:28:47.465Z", "updated_at"=>"2016-09-13T00:28:47.465Z"}} (via streamed from order_channel)
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 56ms (Views: 49.2ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:28:49 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:28:49 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:28:49 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:29:31 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 273ms (Views: 270.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-12 18:29:31 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:31 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:29:32 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users/1/edit" for ::1 at 2016-09-12 18:29:35 -0600
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.9ms)
+  Rendered users/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/1" for ::1 at 2016-09-12 18:29:43 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eBZ+bY2hfWoVPYP4kFCI5xFBioprBWjwDFMeivfzAs0oRa6Wn94EFxmZP+4ZncJBAt0gluX3rKPjNzDtguA5hA==", "user"=>{"name"=>"David", "last_name"=>"Cortes Saenz", "email"=>"dcortes22@gmail.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "last_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_name", "Cortes Saenz"], ["updated_at", 2016-09-13 00:29:43 UTC], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 3df5e8b2-7773-4e55-bf45-ededff189019) to Async(default) with arguments: #<GlobalID:0x007f863cf72870 @uri=#<URI::GID gid://order-app/User/1>>
+Redirected to http://localhost:3000/users/1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+[ActiveJob] [OrderBroadcastJob] [3df5e8b2-7773-4e55-bf45-ededff189019] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f863f0493f0 @uri=#<URI::GID gid://order-app/User/1>>
+[ActiveJob] [OrderBroadcastJob] [3df5e8b2-7773-4e55-bf45-ededff189019] [ActionCable] Broadcasting to order_channel: {:user=>#<User id: 1, name: "David", last_name: "Cortes Saenz", email: "dcortes22@gmail.com", created_at: "2016-09-13 00:28:47", updated_at: "2016-09-13 00:29:43">}
+[ActiveJob] [OrderBroadcastJob] [3df5e8b2-7773-4e55-bf45-ededff189019] Performed OrderBroadcastJob from Async(default) in 0.86ms
+OrderChannel transmitting {"user"=>{"id"=>1, "name"=>"David", "last_name"=>"Cortes Saenz", "email"=>"dcortes22@gmail.com", "created_at"=>"2016-09-13T00:28:47.465Z", "updated_at"=>"2016-09-13T00:29:43.235Z"}} (via streamed from order_channel)
+Started GET "/users/1" for ::1 at 2016-09-12 18:29:43 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:43 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:29:43 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:43 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:29:46 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-12 18:29:48 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-12 18:29:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zetd+oPjxzRHmVJv7LIyyvapU9kppNkov40jf5JHiOf2TkUdjuqSIUAkLH/hdtBEHdJ7zYVNdZhrmq2usyJSlg==", "user"=>{"name"=>"Dso", "last_name"=>"Tres", "email"=>"d@d.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dso"], ["last_name", "Tres"], ["email", "d@d.com"], ["created_at", 2016-09-13 00:29:57 UTC], ["updated_at", 2016-09-13 00:29:57 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [70748c45-8bfb-4045-8133-26d676ec824d] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f863bbb53c8 @uri=#<URI::GID gid://order-app/User/2>>
+[ActiveJob] [OrderBroadcastJob] [70748c45-8bfb-4045-8133-26d676ec824d] [ActionCable] Broadcasting to order_channel: {:user=>#<User id: 2, name: "Dso", last_name: "Tres", email: "d@d.com", created_at: "2016-09-13 00:29:57", updated_at: "2016-09-13 00:29:57">}
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 70748c45-8bfb-4045-8133-26d676ec824d) to Async(default) with arguments: #<GlobalID:0x007f864383b320 @uri=#<URI::GID gid://order-app/User/2>>
+[ActiveJob] [OrderBroadcastJob] [70748c45-8bfb-4045-8133-26d676ec824d] Performed OrderBroadcastJob from Async(default) in 0.79ms
+OrderChannel transmitting {"user"=>{"id"=>2, "name"=>"Dso", "last_name"=>"Tres", "email"=>"d@d.com", "created_at"=>"2016-09-13T00:29:57.453Z", "updated_at"=>"2016-09-13T00:29:57.453Z"}} (via streamed from order_channel)
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for ::1 at 2016-09-12 18:29:57 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:57 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:29:57 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:29:57 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:30:01 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-12 18:32:33 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 18:37:46 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:37:46 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users/1" for ::1 at 2016-09-12 18:37:49 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 1671ms (Views: 1616.1ms | ActiveRecord: 5.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:37:51 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:37:51 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:37:51 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:37:54 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-09-12 18:37:56 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:37:56 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:37:56 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:37:56 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:41:31 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:41:31 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:41:32 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:41:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:42:25 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:42:25 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:42:25 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:42:25 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:43:05 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:05 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:43:06 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:06 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:43:30 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:30 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:43:31 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:31 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/users" for ::1 at 2016-09-12 18:43:39 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:39 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:43:39 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:43:39 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE "drinks"."id" IS NULL[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+Started GET "/" for ::1 at 2016-09-12 18:56:10 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 33ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  
+app/controllers/users_controller.rb:68:in `set_user'
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.3ms)
+Started GET "/" for ::1 at 2016-09-12 18:56:28 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 428ms (Views: 405.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 18:56:29 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:56:29 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 18:56:57 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:56:57 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:56:57 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:56:57 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 18:59:40 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 1.0ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 18:59:40 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 18:59:41 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 18:59:41 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/drinks.json" for ::1 at 2016-09-12 19:00:36 -0600
+Processing by DrinksController#create as JSON
+  Parameters: {"drink"=>{"name"=>"Cafe"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.0.0.1) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.0.0.1) lib/action_controller/metal/request_forgery_protection.rb:223:in `handle_unverified_request'
+actionpack (5.0.0.1) lib/action_controller/metal/request_forgery_protection.rb:218:in `verify_authenticity_token'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:382:in `block in make_lambda'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:169:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:169:in `block (2 levels) in halting'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:12:in `call'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:170:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:170:in `block in halting'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `each'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/dcortess/.rvm/gems/ruby-2.2.2@global/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.4ms)
+Started POST "/drinks.json" for ::1 at 2016-09-12 19:01:13 -0600
+Processing by DrinksController#create as JSON
+  Parameters: {"drink"=>{"name"=>"Cafe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cafe"], ["created_at", 2016-09-13 01:01:13 UTC], ["updated_at", 2016-09-13 01:01:13 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering drinks/show.json.jbuilder
+  Rendered drinks/_drink.json.jbuilder (0.6ms)
+  Rendered drinks/show.json.jbuilder (5.1ms)
+Completed 201 Created in 21ms (Views: 13.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/drinks.json" for ::1 at 2016-09-12 19:01:22 -0600
+Processing by DrinksController#create as JSON
+  Parameters: {"drink"=>{"name"=>"Fanta"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fanta"], ["created_at", 2016-09-13 01:01:22 UTC], ["updated_at", 2016-09-13 01:01:22 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering drinks/show.json.jbuilder
+  Rendered drinks/_drink.json.jbuilder (0.5ms)
+  Rendered drinks/show.json.jbuilder (1.4ms)
+Completed 201 Created in 12ms (Views: 8.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 19:01:24 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:01:24 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:01:30 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"David", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com", "drink_ids"=>[1]}}
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "David"], ["last_name", "Cortes"], ["email", "dcortes22@gmail.com"], ["created_at", 2016-09-13 01:01:30 UTC], ["updated_at", 2016-09-13 01:01:30 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 3], ["drink_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 573d05f1-ccf7-49b2-8cfb-b95d1a746da2) to Async(default) with arguments: #<GlobalID:0x007fcc0cc86df8 @uri=#<URI::GID gid://order-app/User/3>>
+  Rendering users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [573d05f1-ccf7-49b2-8cfb-b95d1a746da2] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fcc0e022df8 @uri=#<URI::GID gid://order-app/User/3>>
+[ActiveJob] [OrderBroadcastJob] [573d05f1-ccf7-49b2-8cfb-b95d1a746da2] [ActionCable] Broadcasting to order_channel: {:user=>#<User id: 3, name: "David", last_name: "Cortes", email: "dcortes22@gmail.com", created_at: "2016-09-13 01:01:30", updated_at: "2016-09-13 01:01:30">}
+[ActiveJob] [OrderBroadcastJob] [573d05f1-ccf7-49b2-8cfb-b95d1a746da2] Performed OrderBroadcastJob from Async(default) in 0.68ms
+OrderChannel transmitting {"user"=>{"id"=>3, "name"=>"David", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com", "created_at"=>"2016-09-13T01:01:30.767Z", "updated_at"=>"2016-09-13T01:01:30.767Z"}} (via streamed from order_channel)
+  Rendered users/_user.json.jbuilder (0.6ms)
+  Rendered users/show.json.jbuilder (5.8ms)
+Completed 201 Created in 79ms (Views: 14.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 19:01:39 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:01:39 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:01:40 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:01:40 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:03:44 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Daniel", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com", "drink_ids"=>[2]}}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Daniel"], ["last_name", "Cortes"], ["email", "dcortes22@gmail.com"], ["created_at", 2016-09-13 01:03:44 UTC], ["updated_at", 2016-09-13 01:03:44 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 4], ["drink_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 3427380d-4c44-4f84-94cd-ee9db49bece5) to Async(default) with arguments: #<GlobalID:0x007fcc0daa4a48 @uri=#<URI::GID gid://order-app/User/4>>
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [3427380d-4c44-4f84-94cd-ee9db49bece5] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fcc0cd448f8 @uri=#<URI::GID gid://order-app/User/4>>
+[ActiveJob] [OrderBroadcastJob] [3427380d-4c44-4f84-94cd-ee9db49bece5] [ActionCable] Broadcasting to order_channel: {:user=>#<User id: 4, name: "Daniel", last_name: "Cortes", email: "dcortes22@gmail.com", created_at: "2016-09-13 01:03:44", updated_at: "2016-09-13 01:03:44">}
+[ActiveJob] [OrderBroadcastJob] [3427380d-4c44-4f84-94cd-ee9db49bece5] Performed OrderBroadcastJob from Async(default) in 0.86ms
+  Rendering users/show.json.jbuilder
+OrderChannel transmitting {"user"=>{"id"=>4, "name"=>"Daniel", "last_name"=>"Cortes", "email"=>"dcortes22@gmail.com", "created_at"=>"2016-09-13T01:03:44.362Z", "updated_at"=>"2016-09-13T01:03:44.362Z"}} (via streamed from order_channel)
+  Rendered users/_user.json.jbuilder (0.5ms)
+  Rendered users/show.json.jbuilder (1.8ms)
+Completed 201 Created in 21ms (Views: 12.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 19:05:32 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:05:32 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:05:32 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:05:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 19:08:27 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 61ms (Views: 58.4ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:08:27 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:08:28 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:08:28 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 19:08:42 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 55.4ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:08:42 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:08:42 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:08:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 19:16:14 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 257ms (Views: 245.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 19:16:14 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:16:14 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:16:47 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jason", "last_name"=>"Gamboa", "email"=>"jgamboa@gmail.com", "drink_ids"=>[1, 2]}}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jason"], ["last_name", "Gamboa"], ["email", "jgamboa@gmail.com"], ["created_at", 2016-09-13 01:16:47 UTC], ["updated_at", 2016-09-13 01:16:47 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 5], ["drink_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 5], ["drink_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: e63661b1-4997-47d9-9bd3-ceff67b9969a) to Async(default) with arguments: #<GlobalID:0x007fcc0dae4c38 @uri=#<URI::GID gid://order-app/User/5>>
+[ActiveJob] [OrderBroadcastJob] [e63661b1-4997-47d9-9bd3-ceff67b9969a] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fcc0dabe218 @uri=#<URI::GID gid://order-app/User/5>>
+[ActiveJob] [OrderBroadcastJob] [e63661b1-4997-47d9-9bd3-ceff67b9969a] Performed OrderBroadcastJob from Async(default) in 0.58ms
+  Rendering users/show.json.jbuilder
+  Rendered users/_user.json.jbuilder (0.4ms)
+  Rendered users/show.json.jbuilder (1.4ms)
+Completed 201 Created in 26ms (Views: 9.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 19:17:03 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:03 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:17:04 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:04 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/" for ::1 at 2016-09-12 19:17:34 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 179ms (Views: 176.9ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:34 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:17:35 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:35 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:17:45 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jason", "last_name"=>"Gamboa", "email"=>"jgamboa1@gmail.com", "drink_ids"=>[1, 2]}}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jason"], ["last_name", "Gamboa"], ["email", "jgamboa1@gmail.com"], ["created_at", 2016-09-13 01:17:45 UTC], ["updated_at", 2016-09-13 01:17:45 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 6], ["drink_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 6], ["drink_id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: dbe5fdee-4bbe-454a-88c9-a1fc64ebda74) to Async(default) with arguments: #<GlobalID:0x007fcc0ae91168 @uri=#<URI::GID gid://order-app/User/6>>
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+[ActiveJob] [OrderBroadcastJob] [dbe5fdee-4bbe-454a-88c9-a1fc64ebda74] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fcc0aeb65a8 @uri=#<URI::GID gid://order-app/User/6>>
+[ActiveJob] [OrderBroadcastJob] [dbe5fdee-4bbe-454a-88c9-a1fc64ebda74] Performed OrderBroadcastJob from Async(default) in 0.48ms
+  Rendered users/_user.json.jbuilder (0.5ms)
+  Rendered users/show.json.jbuilder (2.1ms)
+Completed 201 Created in 21ms (Views: 9.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-12 19:17:52 -0600
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."name" AS t0_r1, "users"."last_name" AS t0_r2, "users"."email" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "drinks"."id" AS t1_r0, "drinks"."name" AS t1_r1, "drinks"."created_at" AS t1_r2, "drinks"."updated_at" AS t1_r3 FROM "users" LEFT OUTER JOIN "drinks_users" ON "drinks_users"."user_id" = "users"."id" LEFT OUTER JOIN "drinks" ON "drinks"."id" = "drinks_users"."drink_id" WHERE ("drinks"."id" IS NOT NULL)[0m
+  Rendered users/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:52 -0600
+OrderChannel stopped streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:17:53 -0600
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:17:53 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started GET "/cable" for ::1 at 2016-09-12 19:18:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:18:05 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:18:13 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jason", "last_name"=>"Gamboa", "email"=>"jgamboa4@gmail.com", "drink_ids"=>[1, 2]}}
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jason"], ["last_name", "Gamboa"], ["email", "jgamboa4@gmail.com"], ["created_at", 2016-09-13 01:18:13 UTC], ["updated_at", 2016-09-13 01:18:13 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 7], ["drink_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 7], ["drink_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 3a47e0f9-8a6b-4294-9add-5ae04cff484d) to Async(default) with arguments: #<GlobalID:0x007f95dd2bcf58 @uri=#<URI::GID gid://order-app/User/7>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [3a47e0f9-8a6b-4294-9add-5ae04cff484d] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f95daca0a90 @uri=#<URI::GID gid://order-app/User/7>>
+  Rendering users/show.json.jbuilder
+  Rendered users/_user.json.jbuilder (0.9ms)
+  Rendered users/show.json.jbuilder (5.4ms)
+Completed 201 Created in 138ms (Views: 23.8ms | ActiveRecord: 3.1ms)
+
+
+[ActiveJob] [OrderBroadcastJob] [3a47e0f9-8a6b-4294-9add-5ae04cff484d] Performed OrderBroadcastJob from Async(default) in 15.12ms
+Started POST "/users.json" for ::1 at 2016-09-12 19:19:37 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jason", "last_name"=>"Gamboa", "email"=>"jgamboa5@gmail.com", "drink_ids"=>[1, 2]}}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jason"], ["last_name", "Gamboa"], ["email", "jgamboa5@gmail.com"], ["created_at", 2016-09-13 01:19:37 UTC], ["updated_at", 2016-09-13 01:19:37 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 8], ["drink_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 8], ["drink_id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 842d13a7-d69d-42a3-b7ac-68f6941c2964) to Async(default) with arguments: #<GlobalID:0x007f95db562700 @uri=#<URI::GID gid://order-app/User/8>>
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [842d13a7-d69d-42a3-b7ac-68f6941c2964] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f95db4b31b0 @uri=#<URI::GID gid://order-app/User/8>>
+[ActiveJob] [OrderBroadcastJob] [842d13a7-d69d-42a3-b7ac-68f6941c2964] Performed OrderBroadcastJob from Async(default) in 0.72ms
+  Rendering users/show.json.jbuilder
+  Rendered users/_user.json.jbuilder (0.7ms)
+  Rendered users/show.json.jbuilder (1.8ms)
+Completed 201 Created in 23ms (Views: 11.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/cable" for ::1 at 2016-09-12 19:21:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2016-09-12 19:21:51 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+OrderChannel is transmitting the subscription confirmation
+OrderChannel is streaming from order_channel
+Started POST "/users.json" for ::1 at 2016-09-12 19:22:03 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jason", "last_name"=>"Gamboa", "email"=>"jgamboa10@gmail.com", "drink_ids"=>[1, 2]}}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jason"], ["last_name", "Gamboa"], ["email", "jgamboa10@gmail.com"], ["created_at", 2016-09-13 01:22:03 UTC], ["updated_at", 2016-09-13 01:22:03 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 9], ["drink_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 9], ["drink_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [OrderBroadcastJob] [6a972dfa-1754-434a-ae5b-42885dc4a4fd] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fd0bc330a88 @uri=#<URI::GID gid://order-app/User/9>>
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 6a972dfa-1754-434a-ae5b-42885dc4a4fd) to Async(default) with arguments: #<GlobalID:0x007fd0c0912cb8 @uri=#<URI::GID gid://order-app/User/9>>
+  Rendering users/show.json.jbuilder
+  Rendered users/_user.json.jbuilder (0.6ms)
+  Rendered users/show.json.jbuilder (5.9ms)
+Completed 201 Created in 125ms (Views: 17.5ms | ActiveRecord: 5.0ms)
+
+
+[ActiveJob] [OrderBroadcastJob] [6a972dfa-1754-434a-ae5b-42885dc4a4fd]   [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" INNER JOIN "drinks_users" ON "drinks"."id" = "drinks_users"."drink_id" WHERE "drinks_users"."user_id" = ?[0m  [["user_id", 9]]
+[ActiveJob] [OrderBroadcastJob] [6a972dfa-1754-434a-ae5b-42885dc4a4fd]   Rendered users/_order.html.erb (12.1ms)
+[ActiveJob] [OrderBroadcastJob] [6a972dfa-1754-434a-ae5b-42885dc4a4fd] [ActionCable] Broadcasting to order_channel: {:user=>"<tr>\n  <td>Jason Gamboa</td>\n  <td>\n    <ul>\n        <li>\n          Cafe\n        </li>\n        <li>\n          Fanta\n        </li>\n    </ul>\n  </td>\n  <td><button type=\"button\" class=\"btn btn-success\">Entregar</button></td>\n</tr>\n"}
+[ActiveJob] [OrderBroadcastJob] [6a972dfa-1754-434a-ae5b-42885dc4a4fd] Performed OrderBroadcastJob from Async(default) in 47.82ms
+OrderChannel transmitting {"user"=>"<tr>\n  <td>Jason Gamboa</td>\n  <td>\n    <ul>\n        <li>\n          Cafe\n        </li>\n        <li>\n          Fanta\n        </li>\n    </ul>\n  </td>\n  <td><button type=\"button\" class=\"btn btn-success\">Entregar</button></td>\n</tr>\n"} (via streamed from order_channel)
+Started GET "/drinks.json" for ::1 at 2016-09-12 19:22:51 -0600
+Processing by DrinksController#index as JSON
+  Rendering drinks/index.json.jbuilder
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  Rendered drinks/_drink.json.jbuilder (0.8ms)
+  Rendered drinks/_drink.json.jbuilder (0.3ms)
+  Rendered drinks/index.json.jbuilder (3.8ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/drinks.json" for ::1 at 2016-09-12 19:23:08 -0600
+Processing by DrinksController#create as JSON
+  Parameters: {"drink"=>{"name"=>"Granada"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Granada"], ["created_at", 2016-09-13 01:23:08 UTC], ["updated_at", 2016-09-13 01:23:08 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering drinks/show.json.jbuilder
+  Rendered drinks/_drink.json.jbuilder (0.6ms)
+  Rendered drinks/show.json.jbuilder (2.4ms)
+Completed 201 Created in 15ms (Views: 11.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users.json" for ::1 at 2016-09-12 19:23:24 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Maverick", "last_name"=>"Chacon", "email"=>"m@m.com", "drink_ids"=>[1, 2, 3]}}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" IN (1, 2, 3)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maverick"], ["last_name", "Chacon"], ["email", "m@m.com"], ["created_at", 2016-09-13 01:23:24 UTC], ["updated_at", 2016-09-13 01:23:24 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 10], ["drink_id", 1]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 10], ["drink_id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "drinks_users" ("user_id", "drink_id") VALUES (?, ?)[0m  [["user_id", 10], ["drink_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] Enqueued OrderBroadcastJob (Job ID: 6f4d8f9c-e2b6-48cb-93f1-3cb196684157) to Async(default) with arguments: #<GlobalID:0x007fd0bbd92e28 @uri=#<URI::GID gid://order-app/User/10>>
+[ActiveJob] [OrderBroadcastJob] [6f4d8f9c-e2b6-48cb-93f1-3cb196684157] Performing OrderBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fd0bbdf1ec8 @uri=#<URI::GID gid://order-app/User/10>>
+  Rendering users/show.json.jbuilder
+[ActiveJob] [OrderBroadcastJob] [6f4d8f9c-e2b6-48cb-93f1-3cb196684157]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" INNER JOIN "drinks_users" ON "drinks"."id" = "drinks_users"."drink_id" WHERE "drinks_users"."user_id" = ?[0m  [["user_id", 10]]
+  Rendered users/_user.json.jbuilder (0.8ms)
+[ActiveJob] [OrderBroadcastJob] [6f4d8f9c-e2b6-48cb-93f1-3cb196684157]   Rendered users/_order.html.erb (3.8ms)
+  Rendered users/show.json.jbuilder (5.2ms)
+[ActiveJob] [OrderBroadcastJob] [6f4d8f9c-e2b6-48cb-93f1-3cb196684157] [ActionCable] Broadcasting to order_channel: {:user=>"<tr>\n  <td>Maverick Chacon</td>\n  <td>\n    <ul>\n        <li>\n          Cafe\n        </li>\n        <li>\n          Fanta\n        </li>\n        <li>\n          Granada\n        </li>\n    </ul>\n  </td>\n  <td><button type=\"button\" class=\"btn btn-success\">Entregar</button></td>\n</tr>\n"}
+Completed 201 Created in 44ms (Views: 28.9ms | ActiveRecord: 1.4ms)
+
+
+[ActiveJob] [OrderBroadcastJob] [6f4d8f9c-e2b6-48cb-93f1-3cb196684157] Performed OrderBroadcastJob from Async(default) in 27.36ms
+OrderChannel transmitting {"user"=>"<tr>\n  <td>Maverick Chacon</td>\n  <td>\n    <ul>\n        <li>\n          Cafe\n        </li>\n        <li>\n          Fanta\n        </li>\n        <li>\n          Granada\n        </li>\n    </ul>\n  </td>\n  <td><button type=\"button\" class=\"btn btn-success\">Entregar</button></t... (via streamed from order_channel)
