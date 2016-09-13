@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var clean  = require('gulp-clean');
 
 var source = 'styles/',
     dest = 'dist/';
@@ -16,6 +17,10 @@ var bootstrapSass = {
 var angular = {
   in: './node_modules/angular/angular.min.js'
 };
+
+var angularDeps = [
+  './node_modules/angular-route/angular-route.min.js'
+];
 
 // Bootstrap fonts source
 // var fonts = {
@@ -36,7 +41,7 @@ var scss = {
   }
 };
 
-gulp.task('serve', ['sass', 'scripts'], function() {
+gulp.task('serve', ['sass', 'fonts', 'scripts'], function() {
   browserSync.init({
     server: {}
   });
@@ -55,13 +60,31 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function () {
-  return gulp.src([angular.in, 'js/**/*.js'])
+  return gulp.src(getScrips())
     .pipe(concat('main.js'))
-    .pipe(uglify({
-      // inSourceMap:
-      // outSourceMap: "app.js.map"
-    }))
+    // .pipe(uglify({
+    //   // inSourceMap:
+    //   // outSourceMap: "app.js.map"
+    // }))
     .pipe(gulp.dest('dist/js'))
 });
 
+gulp.task('fonts', function () {
+  return gulp.src("fonts/**.*")
+    .pipe(gulp.dest('dist/fonts'))
+});
+
 gulp.task('default', ['serve']);
+
+function getScrips() {
+  var scriptsArr = [
+    angular.in
+  ];
+
+  scriptsArr = scriptsArr.concat(angularDeps);
+  scriptsArr = scriptsArr.concat(['js/**/*.js'])
+
+  console.log(scriptsArr)
+
+  return scriptsArr;
+}

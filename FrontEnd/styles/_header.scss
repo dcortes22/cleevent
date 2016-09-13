@@ -1,10 +1,28 @@
 .header {
-  background-color: #000;
-  color: #fff;
+  background-color: $gondolaBlack;
+  color: $hazeWhite;
   padding: 40px 0;
 
+  .logo {
+    margin: 30px 0;
+    img {
+      margin: 0 auto;
+    }
+  }
+
   p {
-    font-size: 38px;
     text-align: center;
+    font-size: 38px;
+  }
+}
+
+@include respond-to(tablet) {
+  .header {
+    .copy p {
+      font-size: 1.5em;
+    }
+    .copy p:first-child {
+      font-size: 3em;
+    }
   }
 }

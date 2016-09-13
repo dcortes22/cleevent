@@ -11,7 +11,7 @@
   <div class="container">
     <div class="header row">
       <div class="logo">
-      <!-- logo here   -->
+        <img src="./img/logo.png" alt="Calle Lajas Logo" class="img-responsive" />
       </div>
 
       <!-- TODO: change this content dynamically -->
@@ -20,7 +20,7 @@
           <strong>Hola,</strong>
         </p>
         <p>
-          Cu&aacute;l es tu nombre?
+          ¿Cu&aacute;l es tu nombre?
         </p>
       </div>
     </div>
@@ -34,6 +34,10 @@
       <p data-ng-if="person">
         Hola {{person.firstName}}!
       </p>
+    </div>
+
+    <div data-ng-controller="mainCtrl as ctrl">
+
     </div>
 
     <div class="footer text-center">
