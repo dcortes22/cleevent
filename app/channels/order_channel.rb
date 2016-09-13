@@ -9,6 +9,7 @@ class OrderChannel < ApplicationCable::Channel
   end
 
   def deliver(data)
-    User.save_or_udapte(data['user'])
+    user = User.find(data['user'])
+    user.drinks.delete(*user.drinks)
   end
 end
