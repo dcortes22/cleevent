@@ -25,19 +25,20 @@
       </div>
     </div>
 
-    <!-- TODO: here will go the np-route directive -->
-    <div class="content">
-      <div class="form-group">
-        <label class="sr-only" for="firstName">Su Nombre</label>
-        <input type="text" class="form-control" id="firstName" data-ng-model="person.firstName">
-      </div>
-      <p data-ng-if="person">
-        Hola {{person.firstName}}!
-      </p>
-    </div>
+    <div data-ng-view></div>
 
-    <div data-ng-controller="mainCtrl as ctrl">
+    <div class="navigation">
+      <ol class="list-unstyled list-navigation">
+        <li><span class="sr-only">Paso 1</span></li>
+        <li><span class="sr-only">Paso 2</span></li>
+        <li><span class="sr-only">Paso 3</span></li>
+        <li><span class="sr-only">Paso 4</span></li>
+        <li><span class="sr-only">Paso 5</span></li>
+      </ol>
 
+      <span class="glyphicon glyphicon-chevron-right" title="Siguiente">
+        <span class="sr-only">Ir al siguiente paso</span>
+      </span>
     </div>
 
     <div class="footer text-center">

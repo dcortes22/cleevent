@@ -70,7 +70,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('fonts', function () {
-  return gulp.src("fonts/**.*")
+  return gulp.src(["fonts/**.*", bootstrapSass.in + 'assets/fonts/bootstrap/**.*'])
     .pipe(gulp.dest('dist/fonts'))
 });
 
