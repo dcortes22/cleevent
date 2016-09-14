@@ -1,3 +1,26 @@
 .content {
   padding: 30px 0;
+
+  .input-element {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.step-1 {}
+.step-2 {}
+.step-3 {}
+.step-4 {}
+
+.step-5 {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
 }

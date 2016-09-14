@@ -47,7 +47,7 @@ gulp.task('serve', ['sass', 'fonts', 'scripts'], function() {
   });
 
   gulp.watch("styles/*.scss", ['sass']);
-  gulp.watch("js/*.js", ['scripts']);
+  gulp.watch("js/**/*.js", ['scripts']);
   gulp.watch("index.html").on('change', browserSync.reload);
 });
 
@@ -70,7 +70,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('fonts', function () {
-  return gulp.src("fonts/**.*")
+  return gulp.src(["fonts/**.*", bootstrapSass.in + 'assets/fonts/bootstrap/**.*'])
     .pipe(gulp.dest('dist/fonts'))
 });
 
@@ -83,8 +83,6 @@ function getScrips() {
 
   scriptsArr = scriptsArr.concat(angularDeps);
   scriptsArr = scriptsArr.concat(['js/**/*.js'])
-
-  console.log(scriptsArr)
 
   return scriptsArr;
 }

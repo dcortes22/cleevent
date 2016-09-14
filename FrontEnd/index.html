@@ -8,42 +8,53 @@
 </head>
 
 <body data-ng-app="cleeventApp">
-  <div class="container">
-    <div class="header row">
-      <div class="logo">
+  <div class="container" data-ng-controller="mainCtrl as main">
+    <div class="header row" data-ng-if="main.pageService.isShowHeader()">
+      <div class="logo" data-ng-class="{'not-visible': !main.pageService.isShowLogo()}">
         <img src="./img/logo.png" alt="Calle Lajas Logo" class="img-responsive" />
       </div>
 
       <!-- TODO: change this content dynamically -->
       <div class="copy">
         <p>
-          <strong>Hola,</strong>
+          <strong data-ng-bind="main.pageService.getTitle()"></strong>
         </p>
-        <p>
-          ¿Cu&aacute;l es tu nombre?
-        </p>
+        <p data-ng-bind="main.pageService.getSubTitle()"></p>
       </div>
     </div>
 
-    <!-- TODO: here will go the np-route directive -->
-    <div class="content">
-      <div class="form-group">
-        <label class="sr-only" for="firstName">Su Nombre</label>
-        <input type="text" class="form-control" id="firstName" data-ng-model="person.firstName">
-      </div>
-      <p data-ng-if="person">
-        Hola {{person.firstName}}!
-      </p>
-    </div>
+    <div data-ng-view></div>
 
-    <div data-ng-controller="mainCtrl as ctrl">
+    <div class="navigation" data-ng-if="main.pageService.isShowNavigation()"
+      data-ng-controller="navigationCtrl as nav">
+      <ol class="list-unstyled list-navigation">
+        <li data-ng-class="{'active': nav.getCurrentPage() === 1}">
+          <span class="sr-only">Paso 1</span>
+        </li>
+        <li data-ng-class="{'active': nav.getCurrentPage() === 2}">
+          <span class="sr-only">Paso 2</span>
+        </li>
+        <li data-ng-class="{'active': nav.getCurrentPage() === 3}">
+          <span class="sr-only">Paso 3</span>
+        </li>
+        <li data-ng-class="{'active': nav.getCurrentPage() === 4}">
+          <span class="sr-only">Paso 4</span>
+        </li>
+        <li data-ng-class="{'active': nav.getCurrentPage() === 5}">
+          <span class="sr-only">Paso 5</span>
+        </li>
+      </ol>
 
+      <span class="glyphicon glyphicon-chevron-right" title="Siguiente"
+        data-ng-click="nav.btnNext()">
+        <span class="sr-only">Ir al siguiente paso</span>
+      </span>
     </div>
 
     <div class="footer text-center">
-      <p>
+      <!-- <p>
         &copy; 2016
-      </p>
+      </p> -->
     </div>
 
   </div>

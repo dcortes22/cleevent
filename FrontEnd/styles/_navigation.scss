@@ -1,0 +1,45 @@
+.navigation {
+  $navHeight: 35px;
+  position: relative;
+  text-align: center;
+  height: $navHeight;
+
+  .list-navigation {
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: $navHeight;
+
+    li {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+      text-indent: -999px;
+      cursor: default;
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 50%;
+      margin: 0 10px;
+
+      &.active {
+        background-color: #000;
+      }
+    }
+  }
+
+  .glyphicon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+@include respond-to(tablet) {}
+
+@include respond-to(phone) {
+  .navigation {
+    .glyphicon {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
