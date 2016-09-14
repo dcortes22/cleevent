@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :drinks
+  has_many :drinks
 end
