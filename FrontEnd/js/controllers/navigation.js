@@ -12,7 +12,20 @@ cleeventApp.controller('navigationCtrl', ['$location',
       $location.path(getPreviousPage(path));
     }
 
-    // Navigation logic 
+    self.getCurrentPage = function() {
+      var path = $location.path();
+      var currentPage = getPageNumber(path);
+
+      if (currentPage) {
+        currentPage = parseInt(currentPage);
+      } else {
+        currentPage = 1;
+      }
+
+      return currentPage;
+    }
+
+    // Navigation logic
     var getPreviousPage = function(path) {
       var currentPage = getPageNumber(path);
       var previousPage = 0;
