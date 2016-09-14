@@ -1,0 +1,24 @@
+I"7(function() {
+  App.order = App.cable.subscriptions.create("OrderChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(data) {
+      console.log(data);
+      return $('#drinks').append(data['user']);
+    },
+    deliver: function(user) {
+      return this.perform('deliver', {
+        user: user
+      });
+    }
+  });
+
+  $(document).on('click', '[data-behavior~=order_done]', function(event) {
+    var id;
+    event.preventDefault();
+    id = $(this).attr('data-id');
+    return App.order.deliver(id);
+  });
+
+}).call(this);
+:ET

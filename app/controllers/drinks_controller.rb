@@ -4,7 +4,11 @@ class DrinksController < ApplicationController
   # GET /drinks
   # GET /drinks.json
   def index
-    @drinks = Drink.all
+    @drinks = Drink.includes(:category).all
+    respond_to do |format|
+      format.html
+      format.json { render json: @drinks }
+    end
   end
 
   # GET /drinks/1
@@ -69,6 +73,6 @@ class DrinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def drink_params
-      params.require(:drink).permit(:name)
+      params.require(:drink).permit(:name, :category_id)
     end
 end
