@@ -8,26 +8,24 @@
 </head>
 
 <body data-ng-app="cleeventApp">
-  <div class="container">
-    <div class="header row">
-      <div class="logo">
+  <div class="container" data-ng-controller="mainCtrl as main">
+    <div class="header row" data-ng-if="main.pageService.isShowHeader()">
+      <div class="logo" data-ng-class="{'not-visible': !main.pageService.isShowLogo()}">
         <img src="./img/logo.png" alt="Calle Lajas Logo" class="img-responsive" />
       </div>
 
       <!-- TODO: change this content dynamically -->
       <div class="copy">
         <p>
-          <strong>Hola,</strong>
+          <strong data-ng-bind="main.pageService.getTitle()"></strong>
         </p>
-        <p>
-          ¿Cu&aacute;l es tu nombre?
-        </p>
+        <p data-ng-bind="main.pageService.getSubTitle()"></p>
       </div>
     </div>
 
     <div data-ng-view></div>
 
-    <div class="navigation">
+    <div class="navigation" data-ng-if="main.pageService.isShowNavigation()">
       <ol class="list-unstyled list-navigation">
         <li><span class="sr-only">Paso 1</span></li>
         <li><span class="sr-only">Paso 2</span></li>
@@ -42,9 +40,9 @@
     </div>
 
     <div class="footer text-center">
-      <p>
+      <!-- <p>
         &copy; 2016
-      </p>
+      </p> -->
     </div>
 
   </div>
