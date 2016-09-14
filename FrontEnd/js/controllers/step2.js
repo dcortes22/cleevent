@@ -11,7 +11,7 @@ cleeventApp.controller('step2Ctrl', ['apiService', 'pageService',
 
     var processDrinks = function (data) {
       var all = [];
-      var categoriesTemp = data.map(function (drink) {
+      var categories = data.map(function (drink) {
         return {
           'id': drink.category.id,
           'name': drink.category.name,
@@ -19,7 +19,7 @@ cleeventApp.controller('step2Ctrl', ['apiService', 'pageService',
         }
       })
 
-      categoriesTemp.forEach(function (category) {
+      categories.forEach(function (category) {
         // find in array, only push unique ones
         var x = all.some(function (c) {
           return c.id === category.id;
