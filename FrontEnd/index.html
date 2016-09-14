@@ -25,7 +25,8 @@
 
     <div data-ng-view></div>
 
-    <div class="navigation" data-ng-if="main.pageService.isShowNavigation()">
+    <div class="navigation" data-ng-if="main.pageService.isShowNavigation()"
+      data-ng-controller="navigationCtrl as nav">
       <ol class="list-unstyled list-navigation">
         <li><span class="sr-only">Paso 1</span></li>
         <li><span class="sr-only">Paso 2</span></li>
@@ -34,7 +35,7 @@
         <li><span class="sr-only">Paso 5</span></li>
       </ol>
 
-      <span class="glyphicon glyphicon-chevron-right" title="Siguiente">
+      <span class="glyphicon glyphicon-chevron-right" title="Siguiente" data-ng-click="nav.btnNext()">
         <span class="sr-only">Ir al siguiente paso</span>
       </span>
     </div>
