@@ -1,8 +1,8 @@
 var cleeventApp = angular.module("cleeventApp", ['ngRoute']);
 
 cleeventApp.constant('apiUrl', {
-  'dev': 'http://localhost:3001',
-  'prod': 'https://cleapi.herokuapp.com'
+  'dev': 'http://localhost:3001/',
+  'prod': 'https://cleapi.herokuapp.com/'
 })
 
 cleeventApp.config(['$routeProvider',

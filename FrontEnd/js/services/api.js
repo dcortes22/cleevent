@@ -2,7 +2,7 @@ cleeventApp.factory('apiService', ['$http', '$q', 'apiUrl',
   function($http, $q, apiUrl) {
     var BASE_URL = apiUrl.prod; //change to apiUrl.dev for development
 
-    var get = function (id, endpoint) {
+    var get = function (endpoint) {
       var deferred = $q.defer();
       $http.get(BASE_URL + endpoint + '.json').then(function (response) {
         console.log(response);

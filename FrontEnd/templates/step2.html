@@ -1,1 +1,8 @@
-<h2>Step 2</h2>
+<div class="step-2 content">
+  <div data-ng-repeat="category in ctrl.collection">
+    <h3 data-ng-bind="category.name"></h3>
+    <ul class="list-unstyled" data-ng-repeat="drink in category.drinks">
+      <li data-ng-bind="drink.name"></li>
+    </ul>
+  </div>
+</div>
