@@ -19,7 +19,8 @@ var angular = {
 };
 
 var angularDeps = [
-  './node_modules/angular-route/angular-route.min.js'
+  './node_modules/angular-route/angular-route.min.js',
+  './node_modules/angular-local-storage/dist/angular-local-storage.min.js'
 ];
 
 // Bootstrap fonts source

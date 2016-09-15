@@ -1,12 +1,12 @@
-var cleeventApp = angular.module("cleeventApp", ['ngRoute']);
+var cleeventApp = angular.module("cleeventApp", ['ngRoute', 'LocalStorageModule']);
 
 cleeventApp.constant('apiUrl', {
   'dev': 'http://localhost:3001/',
   'prod': 'https://cleapi.herokuapp.com/'
 })
 
-cleeventApp.config(['$routeProvider',
-  function ($routeProvider) {
+cleeventApp.config(['$routeProvider', 'localStorageServiceProvider',
+  function ($routeProvider, localStorageServiceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: '../templates/step1.html',
@@ -35,5 +35,7 @@ cleeventApp.config(['$routeProvider',
       .otherwise({
         redirectTo: '/'
       })
+
+    localStorageServiceProvider.setPrefix('cleeventApp');
   }
 ])

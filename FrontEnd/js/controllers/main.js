@@ -1,5 +1,7 @@
-cleeventApp.controller('mainCtrl', ['$location', 'pageService', 'navigationService',
-  function ($location, pageService, navigationService) {
+cleeventApp.controller('mainCtrl', ['$location', 'pageService',
+'navigationService', 'localStorageService',
+  function ($location, pageService, navigationService,
+    localStorageService) {
     var self = this;
 
     self.pageService = pageService;
@@ -18,6 +20,19 @@ cleeventApp.controller('mainCtrl', ['$location', 'pageService', 'navigationServi
     self.getCurrentPage = function() {
       var path = $location.path();
       return navigationService.getCurrent(path);
+    }
+
+    if (localStorageService.isSupported) {
+      self.saveToLocalStorage = function (key, value) {
+        localStorageService.set(key, value);
+      }
+
+      self.getFromLocalStorage = function (key) {
+        return localStorageService.get(key);
+      }
+
+    } else {
+      console.log('Local storage not supported');
     }
   }
 ])
