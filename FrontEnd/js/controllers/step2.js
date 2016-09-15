@@ -1,6 +1,7 @@
 cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
   function ($scope, apiService, pageService) {
     var self = this;
+    var PARENT = $scope.main;
 
     self.pageService = pageService;
     self.pageService.setTitle('Decíme,');
@@ -78,10 +79,10 @@ cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
       self.drinksOrder = getOrder();
       if (Array.isArray(self.drinksOrder) && self.drinksOrder.length > 0) {
         // call local storage here
-        var data = $scope.main.getFromLocalStorage($scope.main.lsVar);
+        var data = PARENT.getFromLocalStorage(PARENT.lsVar);
         data.user.drinks = self.drinksOrder;
-        $scope.main.saveToLocalStorage($scope.main.lsVar, data);
-        $scope.main.btnNext();
+        PARENT.saveToLocalStorage(PARENT.lsVar, data);
+        PARENT.btnNext();
       } else {
         console.log('Select at least one drink');
       }
