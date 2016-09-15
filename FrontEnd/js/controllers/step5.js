@@ -1,5 +1,5 @@
-cleeventApp.controller('step5Ctrl', ['apiService', 'pageService',
-  function (apiService, pageService) {
+cleeventApp.controller('step5Ctrl', ['pageService',
+  function (pageService) {
     var self = this;
 
     self.pageService = pageService;

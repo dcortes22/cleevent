@@ -1,5 +1,5 @@
-cleeventApp.controller('step3Ctrl', ['apiService', 'pageService',
-  function (apiService, pageService) {
+cleeventApp.controller('step3Ctrl', ['$scope', 'pageService',
+  function ($scope, pageService) {
     var self = this;
 
     self.pageService = pageService;
@@ -7,5 +7,9 @@ cleeventApp.controller('step3Ctrl', ['apiService', 'pageService',
     self.pageService.setSubTitle('Pronto estará tu bebida');
     self.pageService.setShowNavigation(true);
     self.pageService.setShowHeader(true);
+
+    self.btnNext = function () {
+      $scope.main.btnNext();
+    }
   }
 ])
