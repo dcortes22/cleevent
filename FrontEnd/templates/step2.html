@@ -1,16 +1,21 @@
-<div class="step-2 content">
-  <div class="row">
-    <div data-ng-repeat="category in ctrl.collection">
-      <div class="col-md-6">
-        <h3 data-ng-bind="category.name"></h3>
-        <div data-ng-repeat="drink in category.drinks" class="checkbox">
-          <label>
-            <input type="checkbox" data-ng-model="drink.selected" ng-attr-id="{{'chk' + drink.drinkId}}" />
-            <span data-ng-bind="drink.name"></span>
-          </label>
+<div class="step-2">
+  <div class="loading" data-ng-if="ctrl.loading">
+    <img class="img-loading" src="../img/loading.gif" alt="Cargando" />
+  </div>
+  <div class="content" data-ng-if="!ctrl.loading">
+    <div class="row">
+      <div data-ng-repeat="category in ctrl.collection">
+        <div class="col-md-6">
+          <h3 data-ng-bind="category.name"></h3>
+          <div data-ng-repeat="drink in category.drinks" class="checkbox">
+            <label>
+              <input type="checkbox" data-ng-model="drink.selected" ng-attr-id="{{'chk' + drink.drinkId}}" />
+              <span data-ng-bind="drink.name"></span>
+            </label>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <div data-ng-include="'../templates/navigation.html'"></div>
 </div>
-<div data-ng-include="'../templates/navigation.html'"></div>

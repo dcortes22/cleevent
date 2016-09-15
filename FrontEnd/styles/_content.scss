@@ -24,3 +24,15 @@
     text-align: center;
   }
 }
+
+.loading {
+  height: $loadingDivHeight;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+
+  .img-loading {
+    width: 50px;
+    margin-top: 20px;
+  }
+}

@@ -12,11 +12,22 @@ cleeventApp.controller('step1Ctrl', ['$scope', 'pageService',
 
     self.personName = '';
 
+    var getNameParts = function (name) {
+      var arr = name.split(' ');
+      return {
+        'first': arr[0],
+        'last': arr[1]
+      }
+    }
+
     self.btnNext = function () {
       if (self.personName) {
-        // call local storage here
+        var nameObj = getNameParts(self.personName);
         var data = PARENT.getFromLocalStorage(PARENT.lsVar);
-        data.user.name = self.personName;
+
+        data.user.name = nameObj.first;
+        data.user.last_name = nameObj.last;
+        
         PARENT.saveToLocalStorage(PARENT.lsVar, data);
         PARENT.btnNext();
       } else {
@@ -30,46 +41,8 @@ cleeventApp.controller('step1Ctrl', ['$scope', 'pageService',
         'name': '',
         'last_name': '',
         'email': '',
-        'drinks': []
+        'drink_ids': []
       }
     })
   }
 ])
-
-// var self = this;
-//
-// self.getPerson = function() {
-//   apiService.get(1, '/users')
-//     .then(function (response) {
-//       console.log(response);
-//     }, function (error) {
-//       console.log(error);
-//     });
-// }
-//
-// self.postPerson = function() {
-//   apiService.post('/users', {
-//     'user': {
-//       'name':'Daniel',
-//       'last_name':'Cortes',
-//       'email':'dcortes92@hotmail.com',
-//       'drink_ids':[1]
-//     }
-//   }).then(function (response) {
-//     console.log(response);
-//   }, function (error) {
-//     console.log(error);
-//   });
-// }
-//
-// //self.getPerson();
-// self.postPerson();
-
-// {
-//   'user': {
-//     'name':'Daniel',
-//     'last_name':'Cortes',
-//     'email':'dcortes1892@gmail.com',
-//     'drink_ids':[1, 4, 5, 12]
-//   }
-// }

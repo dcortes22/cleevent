@@ -13,6 +13,8 @@ cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
     self.collection = [];
     self.drinksOrder = [];
 
+    self.loading = true;
+
     var processDrinks = function (data) {
       var all = [];
       var categories = data.map(function (drink) {
@@ -72,15 +74,14 @@ cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
     }, function (error) {
       //TODO: handle error
     }).finally(function () {
-      //
+      self.loading = false;
     });
 
     self.btnNext = function () {
       self.drinksOrder = getOrder();
       if (Array.isArray(self.drinksOrder) && self.drinksOrder.length > 0) {
-        // call local storage here
         var data = PARENT.getFromLocalStorage(PARENT.lsVar);
-        data.user.drinks = self.drinksOrder;
+        data.user.drink_ids = self.drinksOrder;
         PARENT.saveToLocalStorage(PARENT.lsVar, data);
         PARENT.btnNext();
       } else {

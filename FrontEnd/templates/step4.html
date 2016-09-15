@@ -1,8 +1,13 @@
-<div class="step-4 content">
-  <div class="form-group">
-    <label class="sr-only" for="personEmail">Su Correo</label>
-    <input type="email" class="form-control input-element" id="personEmail"
-      data-ng-model="ctrl.personEmail">
+<div class="step-4">
+  <div class="loading" data-ng-if="ctrl.loading">
+    <img class="img-loading" src="../img/loading.gif" alt="Cargando" />
   </div>
+  <div class="content" data-ng-if="!ctrl.loading">
+    <div class="form-group">
+      <label class="sr-only" for="personEmail">Su Correo</label>
+      <input type="email" class="form-control input-element" id="personEmail"
+        data-ng-model="ctrl.personEmail">
+    </div>
+  </div>
+  <div data-ng-include="'../templates/navigation.html'"></div>
 </div>
-<div data-ng-include="'../templates/navigation.html'"></div>

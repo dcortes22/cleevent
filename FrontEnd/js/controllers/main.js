@@ -32,6 +32,15 @@ cleeventApp.controller('mainCtrl', ['$location', 'pageService',
         return localStorageService.get(key);
       }
 
+      self.removeFromLocalStorage = function (key) {
+        var toRemove = key || '';
+        if (toRemove) {
+          localStorageService.remove(key);
+        } else {
+          localStorageService.clearAll();
+        }
+      }
+
     } else {
       console.log('Local storage not supported');
     }
