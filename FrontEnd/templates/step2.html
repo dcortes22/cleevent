@@ -1,8 +1,15 @@
 <div class="step-2 content">
-  <div data-ng-repeat="category in ctrl.collection">
-    <h3 data-ng-bind="category.name"></h3>
-    <ul class="list-unstyled" data-ng-repeat="drink in category.drinks">
-      <li data-ng-bind="drink.name"></li>
-    </ul>
+  <div class="row">
+    <div data-ng-repeat="category in ctrl.collection">
+      <div class="col-md-6">
+        <h3 data-ng-bind="category.name"></h3>
+        <div data-ng-repeat="drink in category.drinks" class="checkbox">
+          <label>
+            <input type="checkbox" data-ng-model="drink.selected" ng-attr-id="{{'chk' + drink.drinkId}}" />
+            <span data-ng-bind="drink.name"></span>
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

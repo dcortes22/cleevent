@@ -34,7 +34,8 @@ cleeventApp.controller('step2Ctrl', ['apiService', 'pageService',
         return {
           'drinkId': drink.id,
           'name': drink.name,
-          'categoryId': drink.category.id
+          'categoryId': drink.category.id,
+          'selected': false
         }
       })
 
@@ -50,9 +51,9 @@ cleeventApp.controller('step2Ctrl', ['apiService', 'pageService',
     apiService.get('drinks').then(function (data) {
       processDrinks(data)
     }, function (error) {
-      console.log(error);
+      //TODO: handle error
     }).finally(function () {
-      console.log('finally');
+      //
     });
   }
 ])
