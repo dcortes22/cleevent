@@ -78,9 +78,9 @@ cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
       self.drinksOrder = getOrder();
       if (Array.isArray(self.drinksOrder) && self.drinksOrder.length > 0) {
         // call local storage here
-        var data = $scope.main.getFromLocalStorage('user');
+        var data = $scope.main.getFromLocalStorage($scope.main.lsVar);
         data.user.drinks = self.drinksOrder;
-        $scope.main.saveToLocalStorage('user', data);
+        $scope.main.saveToLocalStorage($scope.main.lsVar, data);
         $scope.main.btnNext();
       } else {
         console.log('Select at least one drink');

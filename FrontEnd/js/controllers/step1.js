@@ -14,19 +14,24 @@ cleeventApp.controller('step1Ctrl', ['$scope', 'pageService',
     self.btnNext = function () {
       if (self.personName) {
         // call local storage here
-        $scope.main.saveToLocalStorage('user', {
-          'user': {
-            'name': self.personName,
-            'last_name': '',
-            'email': '',
-            'drinks': []
-          }
-        })
+        var data = $scope.main.getFromLocalStorage($scope.main.lsVar);
+        data.user.name = self.personName;
+        $scope.main.saveToLocalStorage($scope.main.lsVar, data);
         $scope.main.btnNext();
       } else {
         console.log('Undefined name value');
       }
     }
+
+    // initial object for local storage
+    $scope.main.saveToLocalStorage($scope.main.lsVar, {
+      'user': {
+        'name': '',
+        'last_name': '',
+        'email': '',
+        'drinks': []
+      }
+    })
   }
 ])
 
