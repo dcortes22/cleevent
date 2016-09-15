@@ -7,6 +7,7 @@ cleeventApp.controller('mainCtrl', ['$location', 'pageService',
     self.pageService = pageService;
     self.navigationService = navigationService;
     self.lsVar = 'user';
+    self.location = $location;
 
     self.btnNext = function () {
       var path = $location.path();

@@ -18,10 +18,31 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 
   h1 {
     font-size: 50px;
     text-align: center;
+  }
+
+  .btn-restart {
+    margin-top: 10px;
+    background-image: none;
+    background-color: $gondolaBlack;
+    color: #fff;
+    font-size: 18px;
+    border-color: $gondolaBlack;
+
+    &:active,
+    &:visited {
+      background-color: $gondolaBlack;
+      border-color: $gondolaBlack;
+      color: #fff;
+    }
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 }
 
