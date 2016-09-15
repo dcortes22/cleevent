@@ -1,19 +1,18 @@
-cleeventApp.controller('navigationCtrl', ['$location',
-  function ($location) {
-    var self = this;
+cleeventApp.factory('navigationService', [
+  function () {
 
-    self.btnNext = function () {
-      var path = $location.path();
-      $location.path(getNextPage(path));
+    // returns path
+    var getNext = function (path) {
+      return getNextPage(path);
     }
 
-    self.btnBack = function () {
-      var path = $location.path();
-      $location.path(getPreviousPage(path));
+    // returns path
+    var getPrevious = function (path) {
+      return getPreviousPage(path);
     }
 
-    self.getCurrentPage = function() {
-      var path = $location.path();
+    // returns int
+    var getCurrent = function (path) {
       var currentPage = getPageNumber(path);
 
       if (currentPage) {
@@ -67,6 +66,12 @@ cleeventApp.controller('navigationCtrl', ['$location',
     var getPath = function(pageNumber) {
       var str = '' + pageNumber;
       return '/step' + str;
+    }
+
+    return  {
+      getNext: getNext,
+      getPrevious: getPrevious,
+      getCurrent: getCurrent
     }
   }
 ])

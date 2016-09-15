@@ -1,5 +1,5 @@
-cleeventApp.controller('step1Ctrl', ['apiService', 'pageService',
-  function (apiService, pageService) {
+cleeventApp.controller('step1Ctrl', ['$scope', 'pageService',
+  function ($scope, pageService) {
     var self = this;
 
     self.pageService = pageService;
@@ -8,36 +8,48 @@ cleeventApp.controller('step1Ctrl', ['apiService', 'pageService',
     self.pageService.setShowLogo(true);
     self.pageService.setShowNavigation(true);
     self.pageService.setShowHeader(true);
-    // var self = this;
-    //
-    // self.getPerson = function() {
-    //   apiService.get(1, '/users')
-    //     .then(function (response) {
-    //       console.log(response);
-    //     }, function (error) {
-    //       console.log(error);
-    //     });
-    // }
-    //
-    // self.postPerson = function() {
-    //   apiService.post('/users', {
-    //     'user': {
-    //       'name':'Daniel',
-    //       'last_name':'Cortes',
-    //       'email':'dcortes92@hotmail.com',
-    //       'drink_ids':[1]
-    //     }
-    //   }).then(function (response) {
-    //     console.log(response);
-    //   }, function (error) {
-    //     console.log(error);
-    //   });
-    // }
-    //
-    // //self.getPerson();
-    // self.postPerson();
+
+    self.personName = '';
+
+    self.btnNext = function () {
+      if (self.personName) {
+        // call local storage here
+        $scope.main.btnNext();
+      } else {
+        console.log('Undefined name value');
+      }
+    }
   }
 ])
+
+// var self = this;
+//
+// self.getPerson = function() {
+//   apiService.get(1, '/users')
+//     .then(function (response) {
+//       console.log(response);
+//     }, function (error) {
+//       console.log(error);
+//     });
+// }
+//
+// self.postPerson = function() {
+//   apiService.post('/users', {
+//     'user': {
+//       'name':'Daniel',
+//       'last_name':'Cortes',
+//       'email':'dcortes92@hotmail.com',
+//       'drink_ids':[1]
+//     }
+//   }).then(function (response) {
+//     console.log(response);
+//   }, function (error) {
+//     console.log(error);
+//   });
+// }
+//
+// //self.getPerson();
+// self.postPerson();
 
 // {
 //   'user': {

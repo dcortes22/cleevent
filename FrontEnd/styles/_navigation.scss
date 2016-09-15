@@ -30,6 +30,11 @@
   .glyphicon {
     font-size: 20px;
     cursor: pointer;
+
+    &.disabled {
+      cursor: not-allowed;
+      color: #ddd;
+    }
   }
 }
 
