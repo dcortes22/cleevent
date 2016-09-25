@@ -42,9 +42,15 @@
 
 @include respond-to(phone) {
   .navigation {
+    margin-top: 20px;
+    margin-bottom: 20px;
     .glyphicon {
       position: absolute;
       right: 0;
+    }
+
+    .btn-default {
+      width: 100%;
     }
   }
 }

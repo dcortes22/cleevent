@@ -1,24 +1,6 @@
 <div class="navigation" data-ng-if="main.pageService.isShowNavigation()">
-  <ol class="list-unstyled list-navigation">
-    <li data-ng-class="{'active': main.getCurrentPage() === 1}">
-      <span class="sr-only">Paso 1</span>
-    </li>
-    <li data-ng-class="{'active': main.getCurrentPage() === 2}">
-      <span class="sr-only">Paso 2</span>
-    </li>
-    <li data-ng-class="{'active': main.getCurrentPage() === 3}">
-      <span class="sr-only">Paso 3</span>
-    </li>
-    <li data-ng-class="{'active': main.getCurrentPage() === 4}">
-      <span class="sr-only">Paso 4</span>
-    </li>
-    <li data-ng-class="{'active': main.getCurrentPage() === 5}">
-      <span class="sr-only">Paso 5</span>
-    </li>
-  </ol>
-
-  <span class="glyphicon glyphicon-chevron-right" title="Siguiente"
+  <button type="button" name="btnNext" class="btn btn-default"
     data-ng-click="ctrl.btnNext()">
-    <span class="sr-only">Ir al siguiente paso</span>
-  </span>
+    Siguiente
+  </button>
 </div>
