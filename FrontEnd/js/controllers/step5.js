@@ -10,10 +10,8 @@ cleeventApp.controller('step5Ctrl', ['$scope', 'pageService',
     self.pageService.setShowHeader(false);
 
     self.startOver = function () {
-      //clear localstorage
-      PARENT.removeFromLocalStorage();
-      //go to home page
-      PARENT.location.path('/');
+      // ask for another drink
+      PARENT.location.path('/step3');
     }
   }
 ])

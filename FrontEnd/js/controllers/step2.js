@@ -1,91 +1,22 @@
-cleeventApp.controller('step2Ctrl', ['$scope', 'apiService', 'pageService',
-  function ($scope, apiService, pageService) {
+cleeventApp.controller('step2Ctrl', ['$scope', 'pageService',
+  function ($scope, pageService) {
     var self = this;
     var PARENT = $scope.main;
 
     self.pageService = pageService;
-    self.pageService.setTitle('Decíme,');
-    self.pageService.setSubTitle('¿Qué querés tomar?');
-    self.pageService.setShowLogo(false);
+    self.pageService.setTitle('Dame');
+    self.pageService.setSubTitle('tu mail y podrás ganar una sorpresa');
     self.pageService.setShowNavigation(true);
     self.pageService.setShowHeader(true);
 
-    self.collection = [];
-    self.drinksOrder = [];
-
-    self.loading = true;
-
-    var processDrinks = function (data) {
-      var all = [];
-      var categories = data.map(function (drink) {
-        return {
-          'id': drink.category.id,
-          'name': drink.category.name,
-          'drinks': []
-        }
-      })
-
-      categories.forEach(function (category) {
-        // find in array, only push unique ones
-        var x = all.some(function (c) {
-          return c.id === category.id;
-        })
-
-        if (!x) {
-          all.push(category);
-        }
-      });
-
-      var drinks = data.map(function (drink) {
-        return {
-          'drinkId': drink.id,
-          'name': drink.name,
-          'categoryId': drink.category.id,
-          'selected': false
-        }
-      })
-
-      all.forEach(function (category) {
-        category.drinks = drinks.filter(function (drink) {
-          return category.id === drink.categoryId
-        })
-      })
-
-      self.drinks = drinks;
-      self.collection = all;
-    }
-
-    var getOrder = function () {
-      var order = []
-
-      if (Array.isArray(self.drinks) && self.drinks.length > 0) {
-        order = self.drinks.filter(function (drink) {
-          return drink.selected
-        }).map(function (drink) {
-          return drink.drinkId;
-        })
-      }
-
-      return order;
-    }
-
-    apiService.get('drinks').then(function (data) {
-      processDrinks(data)
-    }, function (error) {
-      //TODO: handle error
-    }).finally(function () {
-      self.loading = false;
-    });
+    self.personEmail = '';
 
     self.btnNext = function () {
-      self.drinksOrder = getOrder();
-      if (Array.isArray(self.drinksOrder) && self.drinksOrder.length > 0) {
+      if (self.personEmail) {
         var data = PARENT.getFromLocalStorage(PARENT.lsVar);
-        data.user.drink_ids = self.drinksOrder;
+        data.user.email = self.personEmail;
         PARENT.saveToLocalStorage(PARENT.lsVar, data);
         PARENT.btnNext();
-      } else {
-        console.log('Select at least one drink');
       }
     }
   }
