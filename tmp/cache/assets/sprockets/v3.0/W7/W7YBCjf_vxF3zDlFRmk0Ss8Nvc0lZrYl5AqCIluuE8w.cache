@@ -1,0 +1,5 @@
+I"?(function() {
+  (function($) {})(jQuery);
+
+}).call(this);
+:ET

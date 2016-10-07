@@ -1,0 +1,16 @@
+I"(function() {
+  (function($) {
+    return $.ajax({
+      type: "GET",
+      dataType: 'json',
+      data: {},
+      url: “ / users.json”
+    }).success(function(data) {
+      var array;
+      array = data;
+      return console.log(array);
+    });
+  })(jQuery);
+
+}).call(this);
+:ET

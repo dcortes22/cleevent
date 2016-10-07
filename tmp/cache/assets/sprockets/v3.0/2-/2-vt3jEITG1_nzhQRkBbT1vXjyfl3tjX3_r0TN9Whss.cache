@@ -1,0 +1,22 @@
+I"8(function() {
+  (function($) {
+    var quoteIndex, quotes, showNextQuote, stop;
+    quotes = $('.quotes');
+    quoteIndex = -1;
+    stop = false;
+    showNextQuote = function() {
+      ++quoteIndex;
+      if (stop === false) {
+        quotes.eq(quoteIndex % quotes.length).fadeIn(100).delay(100).fadeOut(100, showNextQuote);
+      } else {
+        quotes.eq(Math.floor(Math.random() * quotes.length) % quotes.length).show();
+      }
+    };
+    $(document).on('click', '.stop', function() {
+      stop = true;
+    });
+    showNextQuote();
+  })(jQuery);
+
+}).call(this);
+:ET

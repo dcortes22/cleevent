@@ -1,0 +1,43 @@
+I"(function() {
+  (function($) {
+    var $display, students;
+    students = [];
+    $.ajax({
+      type: "GET",
+      dataType: 'json',
+      data: {},
+      url: "/users.json"
+    }).success(function(data) {
+      students = data;
+      return console.log(students);
+    });
+    $display = $('#display');
+    return $(document).on('click', '.rifa', function(e) {
+      var i, selected, total;
+      total = students.length;
+      selected = Math.floor(Math.random() * total);
+      i = 0;
+      console.log('selected', selected);
+      $display.removeClass('winner');
+      i = 0;
+      while (i < total) {
+        console.log('for', i);
+        setTimeout((function(i) {
+          return function() {
+            console.log('timeout', i);
+            $display.text(students[i].name.toUpperCase());
+            if (i === selected) {
+              $display.addClass('winner');
+            }
+          };
+        })(i), i * 250);
+        if (i === selected) {
+          break;
+        }
+        i++;
+      }
+    });
+  })(jQuery);
+
+}).call(this);
+:ET

@@ -1,0 +1,19 @@
+I"e(function() {
+  (function($) {
+    $.ajax({
+      type: "GET",
+      dataType: 'json',
+      data: {},
+      url: "/users.json"
+    }).success(function(data) {
+      var array;
+      array = data;
+      return console.log(array);
+    });
+    return $('.btn').on('click', function(e) {
+      return console.log("Hola");
+    });
+  })(jQuery);
+
+}).call(this);
+:ET

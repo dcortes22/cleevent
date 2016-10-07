@@ -1,0 +1,10 @@
+I"À(function() {
+  (function($) {
+    var array, customers;
+    customers = '/users.json';
+    array = $.get(customers).responseJSON;
+    return console.log(array);
+  })(jQuery);
+
+}).call(this);
+:ET

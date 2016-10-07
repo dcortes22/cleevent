@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'raffle/index'
+
   resources :categories
   resources :drinks
   resources :users
